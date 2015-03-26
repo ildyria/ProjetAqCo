@@ -15,7 +15,7 @@ git push			: push your commited changes online
 
 
 pour un clone rapide : 
-git clone git@github.com:ildyria/Arimaa.git
+git clone git@github.com:ildyria/ProjetAqCo.git
 
 
 
