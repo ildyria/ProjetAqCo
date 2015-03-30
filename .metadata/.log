@@ -1,0 +1,308 @@
+!SESSION 2015-03-26 16:18:13.448 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -data /home-reseau/gbiez/workspace/ProjetAqCo -os linux -ws gtk -arch x86_64
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 16:18:24.171
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin$1.run(MercurialEclipsePlugin.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 16:18:24.171
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 16:18:24.406
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getCommands(AbstractShellCommand.java:457)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:336)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 16:18:24.406
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 16:18:24.508
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getRunDir(AbstractShellCommand.java:533)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.setupProcess(AbstractShellCommand.java:394)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:339)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 16:18:24.509
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 16:18:24.611
+!MESSAGE . Command line: hg -y showconfig ui.username, error code: -1
+!STACK 1
+. Command line: hg -y showconfig ui.username, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 16:18:24.611
+!MESSAGE . Command line: hg -y showconfig ui.username
+!SESSION 2015-03-26 17:59:56.289 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-03-26 18:00:07.196
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:00:11.176
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin$1.run(MercurialEclipsePlugin.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:00:11.177
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:00:11.375
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getCommands(AbstractShellCommand.java:457)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:336)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:00:11.376
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:00:11.479
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getRunDir(AbstractShellCommand.java:533)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.setupProcess(AbstractShellCommand.java:394)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:339)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:00:11.479
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:00:11.580
+!MESSAGE . Command line: hg -y showconfig ui.username, error code: -1
+!STACK 1
+. Command line: hg -y showconfig ui.username, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:00:11.581
+!MESSAGE . Command line: hg -y showconfig ui.username
+!SESSION 2015-03-26 18:01:36.125 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:01:46.645
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin$1.run(MercurialEclipsePlugin.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:01:46.645
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:01:46.835
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getCommands(AbstractShellCommand.java:457)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:336)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:01:46.835
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:01:46.938
+!MESSAGE . Command line: hg -y debuginstall, error code: -1
+!STACK 1
+. Command line: hg -y debuginstall, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:316)
+	at com.vectrace.MercurialEclipse.commands.HgDebugInstallClient.debugInstall(HgDebugInstallClient.java:30)
+	at com.vectrace.MercurialEclipse.MercurialEclipsePlugin.checkHgInstallation(MercurialEclipsePlugin.java:217)
+	at com.vectrace.MercurialEclipse.DefaultConfiguration.getExecutable(DefaultConfiguration.java:37)
+	at com.vectrace.MercurialEclipse.commands.HgClients.getExecutable(HgClients.java:49)
+	at com.vectrace.MercurialEclipse.commands.RootlessHgCommand.getExecutable(RootlessHgCommand.java:49)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.getRunDir(AbstractShellCommand.java:533)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.setupProcess(AbstractShellCommand.java:394)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:339)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:01:46.938
+!MESSAGE . Command line: hg -y debuginstall
+
+!ENTRY com.vectrace.MercurialEclipse 4 0 2015-03-26 18:01:47.040
+!MESSAGE . Command line: hg -y showconfig ui.username, error code: -1
+!STACK 1
+. Command line: hg -y showconfig ui.username, error code: -1
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand$ProzessWrapper.checkError(AbstractShellCommand.java:217)
+	at com.vectrace.MercurialEclipse.commands.CommandJob.execute(CommandJob.java:217)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToStream(AbstractShellCommand.java:347)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToBytes(AbstractShellCommand.java:327)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:441)
+	at com.vectrace.MercurialEclipse.commands.AbstractShellCommand.executeToString(AbstractShellCommand.java:437)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLines(HgConfigClient.java:30)
+	at com.vectrace.MercurialEclipse.commands.HgConfigClient.getHgConfigLine(HgConfigClient.java:22)
+	at com.vectrace.MercurialEclipse.team.MercurialUtilities.getDefaultUserName(MercurialUtilities.java:281)
+	at com.vectrace.MercurialEclipse.preferences.PreferenceInitializer$1.run(PreferenceInitializer.java:136)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 com.vectrace.MercurialEclipse 4 -1 2015-03-26 18:01:47.041
+!MESSAGE . Command line: hg -y showconfig ui.username
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-03-26 18:02:16.761
+!MESSAGE An internal error occurred during: "Generating Library Hover help for installed devhelp documentation".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.linuxtools.internal.cdt.libhover.devhelp.DevHelpPlugin$DevhelpStartupJob.run(DevHelpPlugin.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2015-03-26 18:06:18.132 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -data /home-reseau/gbiez/workspace/ProjetAqCo -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-03-26 18:07:14.642
+!MESSAGE An internal error occurred during: "Generating Library Hover help for installed devhelp documentation".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.linuxtools.internal.cdt.libhover.devhelp.DevHelpPlugin$DevhelpStartupJob.run(DevHelpPlugin.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
