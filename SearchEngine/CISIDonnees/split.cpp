@@ -1,9 +1,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-<<<<<<< Updated upstream
 #include <algorithm>
-=======
 
 std::string clear_illegal(std::string& s)
 {
@@ -16,7 +14,6 @@ std::string clear_illegal(std::string& s)
 	}
 	return s;
 }
->>>>>>> Stashed changes
 
 int main(int argc, char const *argv[])
 {
@@ -41,16 +38,9 @@ int main(int argc, char const *argv[])
 			}
 			getline(myfile,str_line); // Saves the line in STRING.
 			str_line.resize(str_line.size() -1);
-<<<<<<< Updated upstream
-
-			replace(str_line.begin(), str_line.end(), '/', '-');
-			filename = "files/[" + str_num + "] " + str_line + ".txt";
-
-=======
 			clear_illegal(str_line);
 			str_num.resize(str_num.size() -1);
 			filename = "files/[" + str_num + "] " + str_line + ".txt";
->>>>>>> Stashed changes
 			tofiles.open(filename.c_str());
 			tofiles << str_line << std::endl;
 			number++;
