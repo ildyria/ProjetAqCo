@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-
+#include <algorithm>
 
 int main(int argc, char const *argv[])
 {
@@ -13,7 +13,6 @@ int main(int argc, char const *argv[])
 	std::string filename = "NONE";
 	myfile.open("CISI.ALLnettoye");
 	int number = 1;
-	int previous = 0;
 	while(!myfile.eof()) // To get you all the lines.
 	{
 		getline(myfile,str_line); // Saves the line in STRING.
@@ -26,15 +25,11 @@ int main(int argc, char const *argv[])
 				tofiles.close();
 			}
 			getline(myfile,str_line); // Saves the line in STRING.
-
 			str_line.resize(str_line.size() -1);
-			str_num.resize(str_num.size() -1);
+
+			replace(str_line.begin(), str_line.end(), '/', '-');
 			filename = "files/[" + str_num + "] " + str_line + ".txt";
-			if(number != (previous + 1))
-			{
-				std::cout << "problem : " << number << std::endl;
-			}
-			previous = number;
+
 			tofiles.open(filename.c_str());
 			tofiles << str_line << std::endl;
 			number++;
