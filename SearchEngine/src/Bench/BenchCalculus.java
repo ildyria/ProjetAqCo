@@ -11,19 +11,19 @@ import Expected.Result;
 
 public class BenchCalculus {
 
-	public static BenchData Calculate(TopDocs topdoc, Result result, int numFiles){
+	public static BenchData Calculate(List<ScoreDoc> hits, Result result, int numFiles){
 		BenchData res = null;
 		int tp = 0;
 		int fp = 0;
 		int fn = 0;
 		int tn = 0;
 
-		ScoreDoc[] hits = topdoc.scoreDocs;
 		List<Integer> temp_files = result._files;
 		
-		for(int i = 0; i < hits.length; ++i)
+		for(int i = 0; i < hits.size(); ++i)
 		{
-			Integer toFind = hits[i].doc;
+			Integer toFind = hits.get(i).doc;
+//			System.out.println(hits.get(i).score);
 			if(temp_files.contains(toFind))
 			{
 				temp_files.remove(toFind);

@@ -7,8 +7,10 @@ import java.io.InputStreamReader;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,8 +21,11 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
+
+import Bench.BenchCalculus;
 
 public class SearchFiles {
 	private static Analyzer analyzerImpl;
@@ -97,5 +102,30 @@ public class SearchFiles {
 		}
 		reader.close();
 		return topDocsList;
+	}
+
+	public Map<Integer, List<ScoreDoc>> applyThreshold(Map<Integer, TopDocs> queryResult, float threshold)
+	{
+		Map<Integer, List<ScoreDoc>> res = new HashMap<Integer, List<ScoreDoc>>();
+		
+		Iterator<Entry<Integer, TopDocs>> it = queryResult.entrySet().iterator();
+	    while (it.hasNext()) {
+	    	Entry<Integer, TopDocs> pair = it.next();
+	    	List<ScoreDoc> doclist = new ArrayList<ScoreDoc>();
+
+	    	ScoreDoc[] hits = pair.getValue().scoreDocs;
+			for(int i = 0; i < hits.length; ++i)
+			{
+				if(hits[i].score > threshold)
+				{
+					doclist.add(hits[i]);
+				}
+			}
+			res.put(pair.getKey(), doclist);
+	        it.remove();
+	    }
+
+
+		return res;
 	}
 }

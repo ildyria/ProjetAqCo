@@ -17,7 +17,7 @@ public class BenchData {
 	}
 
 	public double get_precision(){ // what percent of what we got is what we wanted
-		return (_tp/(double)(_tp + _fp))*100;
+		return (_tp + _fp != 0) ? (_tp/(double)(_tp + _fp))*100 : 0.;
 	}
 
 	public double get_recall(){ // what we got over what was expected
