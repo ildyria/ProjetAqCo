@@ -25,8 +25,6 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 
-import Bench.BenchCalculus;
-
 public class SearchFiles {
 	private static Analyzer analyzerImpl;
 

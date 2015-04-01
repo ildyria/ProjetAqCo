@@ -18,14 +18,14 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 		//Choisir l'implémentation d'analyzer voulue ici
 		//TODO : faire un choix en commande à la limite ? pour vendredi (démo et rendu code)
-		//Analyzer analyzerImpl = new StandardAnalyzer();
+		Analyzer analyzerImpl = new StandardAnalyzer();
 		
-		Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
-				   .withTokenizer("standard")
-				   .addTokenFilter("standard")
-				   .addTokenFilter("lowercase")
-				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
-				   .build();
+//		Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
+//				   .withTokenizer("standard")
+//				   .addTokenFilter("standard")
+//				   .addTokenFilter("lowercase")
+//				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
+//				   .build();
 				
 		
 		IndexFiles indexing = new IndexFiles(analyzerImpl);
@@ -37,7 +37,7 @@ public class Main {
 		
 		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
 
-		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.2);
+		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.1);
 		
 		Benchmark bench = new Benchmark(queryFilteredResults);
 		

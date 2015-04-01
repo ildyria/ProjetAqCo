@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TopDocs;
 
 import Expected.ResultsParser;
 
@@ -21,7 +20,6 @@ public class Benchmark {
 		_expected = new ResultsParser("CISIDonnees/CISI.REL",queryResults.size());
 		_datas = new ArrayList<BenchData>();
 		_bench = new HashMap<String, Double>();
-		System.out.println("");
 		System.out.println("entries : " + _expected._entries.size());
 		Iterator<Entry<Integer, List<ScoreDoc>>> it = queryResults.entrySet().iterator();
 	    while (it.hasNext()) {
