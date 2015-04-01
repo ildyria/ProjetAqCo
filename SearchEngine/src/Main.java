@@ -18,14 +18,22 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 		//Choisir l'implémentation d'analyzer voulue ici
 		//TODO : faire un choix en commande à la limite ? pour vendredi (démo et rendu code)
-		Analyzer analyzerImpl = new StandardAnalyzer();
+//Analyzer analyzerImpl = new StandardAnalyzer();
 		
 //		Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
-//				   .withTokenizer("standard")
+//				   .withTokenizer("classic")
 //				   .addTokenFilter("standard")
 //				   .addTokenFilter("lowercase")
 //				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
 //				   .build();
+		Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
+				   .withTokenizer("standard")
+//				   .addTokenFilter("standard")
+//				   .addTokenFilter("lowercase")
+//				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
+//				   .addTokenFilter("SnowBallPorter","language", "English")
+//				  // .addTokenFilter("removeduplicates")
+				   .build();
 				
 		
 		IndexFiles indexing = new IndexFiles(analyzerImpl);
