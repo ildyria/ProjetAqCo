@@ -40,7 +40,7 @@ public class Main {
 		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.1);
 		
 		Benchmark bench = new Benchmark(queryFilteredResults);
-		
+		System.out.println("Total results : ");
 		System.out.println(bench.toString());
 	}
 }

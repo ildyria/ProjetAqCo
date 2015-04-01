@@ -64,18 +64,23 @@ public class BenchCalculus {
 		double recall = 0;
 		double error_rate = 0;
 		int nb_recall = 0;
+		int nb_precision = 0;
 		for(int i = 0; i < data.size(); ++i)
 		{
-			precision += data.get(i).get_precision();
 			error_rate += data.get(i).get_error_rate();
 			if(data.get(i).get_recall() != 999)
 			{
 				recall += data.get(i).get_recall();
 				nb_recall++;
 			}
+			if(data.get(i).get_precision() != 999)
+			{
+				precision += data.get(i).get_precision();
+				nb_precision++;
+			}
 		}
 
-		stats.put("precision", precision / data.size());
+		stats.put("precision", precision / nb_precision);
 		stats.put("recall", recall / nb_recall );
 		stats.put("error rate", error_rate / data.size());
 		

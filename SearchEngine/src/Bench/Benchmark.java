@@ -35,6 +35,6 @@ public class Benchmark {
 	public String toString(){
 		return "precision : " + String.format("%.3g", _bench.get("precision")) +  "%, " +
 				"sensitivity : " + String.format("%.3g", _bench.get("recall")) + "%, " +
-				"error rate :" + String.format("%.3g", _bench.get("error rate")) + "%";
+				"error rate : " + String.format("%.3g", _bench.get("error rate")) + "%";
 	}
 }
