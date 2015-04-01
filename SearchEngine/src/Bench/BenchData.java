@@ -30,8 +30,9 @@ public class BenchData {
 
 	@Override
 	public String toString(){
-		return _name + " -  precision : " + String.format("%.3g", get_precision()) + "%, " +
-						"sensitivity : " + String.format("%.3g", get_recall()) + "%, " +
-						"error rate : " + String.format("%.3g", get_error_rate()) + "%.";
+		return String.format("%3s", _name) + 
+				" -  precision : " + String.format("%5.3g", get_precision()) + "%, " +
+				"sensitivity : " + String.format("%4.3g", get_recall()) + "%, " +
+				"error rate : " + String.format("%.3g", get_error_rate()) + "%.";
 	}
 }
