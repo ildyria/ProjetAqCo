@@ -3,9 +3,11 @@ package Bench;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
 import Expected.ResultsParser;
@@ -15,15 +17,15 @@ public class Benchmark {
 	ArrayList<BenchData> _datas;
 	ResultsParser _expected;
 	
-	public Benchmark(Map<Integer, TopDocs> queryResults){
+	public Benchmark(Map<Integer, List<ScoreDoc>> queryResults){
 		_expected = new ResultsParser("CISIDonnees/CISI.REL",queryResults.size());
 		_datas = new ArrayList<BenchData>();
 		_bench = new HashMap<String, Double>();
 		System.out.println("");
 		System.out.println("entries : " + _expected._entries.size());
-		Iterator<Entry<Integer, TopDocs>> it = queryResults.entrySet().iterator();
+		Iterator<Entry<Integer, List<ScoreDoc>>> it = queryResults.entrySet().iterator();
 	    while (it.hasNext()) {
-	    	Entry<Integer, TopDocs> pair = it.next();
+	    	Entry<Integer, List<ScoreDoc>> pair = it.next();
 	    	_datas.add(BenchCalculus.Calculate(pair.getValue(), _expected._entries.get(pair.getKey()-1), 1460));
 	        it.remove();
 	    }

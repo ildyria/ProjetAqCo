@@ -1,7 +1,9 @@
+import java.util.List;
 import java.util.Map;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
 import Bench.Benchmark;
@@ -23,7 +25,10 @@ public class Main {
 		System.out.println(queries.size());
 		
 		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
-		Benchmark bench = new Benchmark(queryResults);
+
+		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.2);
+		
+		Benchmark bench = new Benchmark(queryFilteredResults);
 		
 		System.out.println(bench.toString());
 	}
