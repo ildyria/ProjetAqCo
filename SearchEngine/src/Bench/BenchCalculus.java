@@ -64,12 +64,14 @@ public class BenchCalculus {
 		double recall = 0;
 		double error_rate = 0;
 		double specificity = 0;
+		double false_reject = 0;
 		int nb_recall = 0;
 		int nb_precision = 0;
 		for(int i = 0; i < data.size(); ++i)
 		{
 			error_rate += data.get(i).get_error_rate();
 			specificity += data.get(i).get_specificity();
+			false_reject += data.get(i).get_false_reject();
 			if(data.get(i).get_recall() != 999)
 			{
 				recall += data.get(i).get_recall();
@@ -86,6 +88,7 @@ public class BenchCalculus {
 		stats.put("specificity", specificity / data.size() );
 		stats.put("recall", recall / nb_recall );
 		stats.put("error rate", error_rate / data.size());
+		stats.put("false", false_reject / data.size());
 		
 		return stats;
 	}

@@ -37,6 +37,10 @@ public class BenchData {
 		return (_tn/(double)(_tn + _fp))*100;
 	}
 
+	public double get_false_reject(){ // what is our error rate (fn & fp)/total
+		return (_fn/(double)(_tn + _fn))*100;
+	}
+
 
 	@Override
 	public String toString(){
@@ -44,6 +48,7 @@ public class BenchData {
 				" -  precision : " + String.format("%3.3g", get_precision()) + "%, " +
 				"sensitivity : " + String.format("%4.3g", get_recall()) + "%, " +
 				"specificity: " + String.format("%5.5g", get_specificity()) + "%, " +
-				"error rate : " + String.format("%.3g", get_error_rate()) + "%.";
+				"error rate : " + String.format("%.3g", get_error_rate()) + "%, " +
+				"false reject : " + String.format("%.3g", get_false_reject()) + "%.";
 	}
 }
