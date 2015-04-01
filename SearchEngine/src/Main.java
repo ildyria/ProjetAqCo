@@ -37,7 +37,7 @@ public class Main {
 		
 		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
 
-		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.1);
+		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.42);
 		
 		Benchmark bench = new Benchmark(queryFilteredResults);
 		System.out.println("Total results : ");

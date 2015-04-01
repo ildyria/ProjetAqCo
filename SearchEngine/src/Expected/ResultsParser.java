@@ -40,7 +40,7 @@ public class ResultsParser {
 //					System.out.println("");
 					while(previous_request != request_num)
 					{
-//						System.out.println("request num : " + previous_request);
+						System.out.println("request num : " + previous_request);
 						entry = new Result(previous_request);
 						_entries.add(entry);
 						previous_request++;
