@@ -1,7 +1,6 @@
 package Indexing;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.IntField;
@@ -32,11 +31,14 @@ import java.util.regex.Pattern;
  */
 public class IndexFiles {
 	private static Document currentDoc;
-	private IndexFiles() {
+	private static Analyzer analyzerImpl;
+	
+	public IndexFiles(Analyzer _analyzer) {
+		analyzerImpl = _analyzer;
 	}
 
 	/** Index all text files under a directory. */
-	public static void main(String[] args) {
+	public void run() {
 		String indexPath = "index";
 		String docsPath = "CISIDonnees/CISI.ALLnettoye";
 
@@ -46,7 +48,7 @@ public class IndexFiles {
 		try {
 			System.out.println("Indexing the file '" + indexPath + "'...");
 
-			Analyzer analyzer = new StandardAnalyzer();
+			Analyzer analyzer = analyzerImpl;
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
 			// Create a new index in the directory, removing any previously
@@ -75,7 +77,7 @@ public class IndexFiles {
 	}
 
 	/** Indexes a single document */
-	static void indexDoc(IndexWriter writer, File file) throws IOException {
+	private static void indexDoc(IndexWriter writer, File file) throws IOException {
 		try {
 			ArrayList<Document> docs = splitFile(file);
 			int i = 0;
