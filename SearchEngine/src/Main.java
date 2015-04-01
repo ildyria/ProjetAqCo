@@ -15,7 +15,6 @@ public class Main {
 		//Choisir l'implémentation d'analyzer voulue ici
 		//TODO : faire un choix en commande à la limite ? pour vendredi (démo et rendu code)
 		Analyzer analyzerImpl = new StandardAnalyzer();
-		
 		IndexFiles indexing = new IndexFiles(analyzerImpl);
 		indexing.run();
 		
