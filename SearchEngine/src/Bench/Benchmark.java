@@ -34,7 +34,8 @@ public class Benchmark {
 	@Override
 	public String toString(){
 		return "precision : " + String.format("%.3g", _bench.get("precision")) +  "%, " +
-				"sensitivity : " + String.format("%.3g", _bench.get("recall")) + "%, " +
+				"recall : " + String.format("%.3g", _bench.get("recall")) + "%, " +
+				"specificity : " + String.format("%.4g", _bench.get("specificity")) + "%, " +
 				"error rate : " + String.format("%.3g", _bench.get("error rate")) + "%";
 	}
 }
