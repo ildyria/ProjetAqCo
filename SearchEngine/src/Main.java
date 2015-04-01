@@ -2,7 +2,9 @@ import java.util.Map;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.search.TopDocs;
 
+import Bench.Benchmark;
 import Indexing.IndexFiles;
 import Indexing.SearchFiles;
 
@@ -20,8 +22,10 @@ public class Main {
 		SearchFiles searching = new SearchFiles(analyzerImpl);
 		Map<Integer,String> queries = searching.getAllQueries();
 		System.out.println(queries.size());
-		searching.executeAllQueries(queries);
 		
+		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
+		Benchmark bench = new Benchmark(queryResults);
+		
+		System.out.println(bench.toString());
 	}
-
 }

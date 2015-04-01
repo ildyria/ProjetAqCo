@@ -12,7 +12,7 @@ public class ResultsParser {
 	public String _path;
 	public List<Result> _entries;
 	
-	ResultsParser(String path){
+	public ResultsParser(String path){
 		_path = new String(path);
 	    _entries = new ArrayList<Result>();
 	    parse();
