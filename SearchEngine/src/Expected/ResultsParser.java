@@ -12,13 +12,13 @@ public class ResultsParser {
 	public String _path;
 	public List<Result> _entries;
 	
-	public ResultsParser(String path){
+	public ResultsParser(String path, int numRequest){
 		_path = new String(path);
 	    _entries = new ArrayList<Result>();
-	    parse();
+	    parse(numRequest);
 	}
 
-	private void parse(){
+	private void parse(int numRequest){
 		try {
 		    Result entry = null;
 		
@@ -36,10 +36,18 @@ public class ResultsParser {
 				
 				if(previous_request != request_num)
 				{
-					System.out.println("");
-					System.out.println("request num : " + request_num);
-					System.out.print("files :");
-					previous_request = request_num;
+					previous_request++;
+//					System.out.println("");
+					while(previous_request != request_num)
+					{
+//						System.out.println("request num : " + previous_request);
+						entry = new Result(previous_request);
+						_entries.add(entry);
+						previous_request++;
+					}
+//					System.out.println("request num : " + request_num);
+//					System.out.print("files :");
+//					previous_request = request_num;
 					if(entry != null)
 					{
 						_entries.add(entry);
@@ -47,7 +55,7 @@ public class ResultsParser {
 					entry = new Result(request_num);
 				}
 				entry.push(file_num);
-				System.out.print(" " + file_num);
+//				System.out.print(" " + file_num);
 				scanner.close();
 			}
 
@@ -56,6 +64,13 @@ public class ResultsParser {
 				_entries.add(entry);
 			}
 			br.close();
+			
+			while(request_num < numRequest)
+			{
+				request_num++;
+				entry = new Result(request_num);
+				_entries.add(entry);
+			}
 	    } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

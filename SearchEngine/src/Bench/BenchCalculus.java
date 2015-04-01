@@ -38,27 +38,31 @@ public class BenchCalculus {
 		tn = numFiles - (tp + fp + fn); 
 		
 		res = new BenchData(((Integer)result._num).toString(), tp, fp, fn, tn);
-		
+		System.out.println(res.toString());
 		return res;
 	}
 	
 	public static HashMap<String, Double> Moyenne(ArrayList<BenchData> data)
 	{
 		HashMap<String, Double> stats = new HashMap<String, Double>();
-		stats.put("precision", 0.);
-		stats.put("recall", 0.);
-		stats.put("error rate", 0.);
-		
+		double precision = 0;
+		double recall = 0;
+		double error_rate = 0;
+		int nb_recall = 0;
 		for(int i = 0; i < data.size(); ++i)
 		{
-			stats.replace("precision", stats.get("precision") + data.get(i).get_precision());
-			stats.replace("recall", stats.get("recall") + data.get(i).get_recall());
-			stats.replace("error rate", stats.get("error rate") + data.get(i).get_error_rate());
+			precision += data.get(i).get_precision();
+			error_rate += data.get(i).get_error_rate();
+			if(data.get(i).get_recall() != 999)
+			{
+				recall += data.get(i).get_recall();
+				nb_recall++;
+			}
 		}
-		
-		stats.replace("precision", stats.get("precision") / data.size());
-		stats.replace("recall", stats.get("recall") / data.size());
-		stats.replace("error rate", stats.get("error rate") / data.size());
+
+		stats.put("precision", precision / data.size());
+		stats.put("recall", recall / nb_recall );
+		stats.put("error rate", error_rate / data.size());
 		
 		return stats;
 	}

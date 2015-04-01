@@ -17,21 +17,21 @@ public class BenchData {
 	}
 
 	public double get_precision(){ // what percent of what we got is what we wanted
-		return _tp/(double)(_tp + _fp)*100;
+		return (_tp/(double)(_tp + _fp))*100;
 	}
 
 	public double get_recall(){ // what we got over what was expected
-		return _tp/(double)(_tp + _fn)*100;
+		return (_tp + _fn != 0) ? (_tp/(double)(_tp + _fn))*100 : 999;
 	}
 
 	public double get_error_rate(){ // what is our error rate (fn & fp)/total
-		return (_fp + _fn)/(double)(_fn + _tp + _fp + _tn)*100;
+		return ((_fp + _fn)/(double)(_fn + _tp + _fp + _tn))*100;
 	}
 
 	@Override
 	public String toString(){
-		return _name + "\n precision : " + get_precision() + "%," +
-						"sensitivity : " + get_recall() + "%," +
-						"error rate : " + get_error_rate() + "%.";
+		return _name + " -  precision : " + String.format("%.3g", get_precision()) + "%, " +
+						"sensitivity : " + String.format("%.3g", get_recall()) + "%, " +
+						"error rate : " + String.format("%.3g", get_error_rate()) + "%.";
 	}
 }
