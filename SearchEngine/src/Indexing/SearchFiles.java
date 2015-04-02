@@ -25,7 +25,6 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 
-import Bench.BenchCalculus;
 
 public class SearchFiles {
 	private static Analyzer analyzerImpl;
@@ -90,9 +89,7 @@ public class SearchFiles {
 
 		for (Map.Entry<Integer, String> entry : queries.entrySet()) {
 			//System.out.printf("Key : %s and Value: %s %n", entry.getKey(),entry.getValue());
-
 			Query query = parser.parse(QueryParser.escape((entry.getValue())));
-
 			//System.out.println(entry.getKey() +" Searching for: " + query.toString(field));
 
 			TopDocs results = searcher.search(query, 200);

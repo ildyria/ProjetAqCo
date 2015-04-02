@@ -18,26 +18,10 @@ public class BenchCalculus {
 		int tn = 0;
 
 		List<Integer> temp_files = result._files;
-//    	System.out.println("" + result._num + " : ");
-//    	System.out.print("expected : ");
-    	if(temp_files.size() == 0)
-    	{
-//    		System.out.println("no results");
-    	}
-    	else
-    	{
-        	for(int i = 0; i < temp_files.size(); ++i)
-        	{
-//        		System.out.print(temp_files.get(i) + " ");
-        	}
-//        	System.out.println();
-    	}
 
-//    	System.out.print("returned : ");
 		for(int i = 0; i < hits.size(); ++i)
 		{
 			Integer toFind = hits.get(i).doc;
-//			System.out.print(hits.get(i).doc + " ");
 			if(temp_files.contains(toFind))
 			{
 				temp_files.remove(toFind);
@@ -48,12 +32,10 @@ public class BenchCalculus {
 				fp++;
 			}
 		}
-//		System.out.println();
 		fn = temp_files.size();
 		tn = numFiles - (tp + fp + fn); 
 		
 		res = new BenchData(((Integer)result._num).toString(), tp, fp, fn, tn, temp_files.size());
-//		System.out.println(res.toString());
 		return res;
 	}
 	
@@ -102,7 +84,7 @@ public class BenchCalculus {
 		stats.put("error rate", error_rate / data.size());
 		stats.put("false", false_reject / data.size());
 
-		stats.put("v2_precision", (tp/(double)(tp + fp))*100);
+		stats.put("v2_precision", (tp + fp != 0) ? (tp/(double)(tp + fp))*100 : 0);
 		stats.put("v2_specificity", (tn/(double)(tn + fp))*100);
 		stats.put("v2_recall", (tp/(double)(tp + fn))*100);
 		stats.put("v2_error rate", ((fp + fn)/(double)(fn + tp + fp + tn))*100);

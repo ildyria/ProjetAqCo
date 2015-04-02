@@ -41,17 +41,31 @@ public class Main {
 		
 		SearchFiles searching = new SearchFiles(analyzerImpl);
 		Map<Integer,String> queries = searching.getAllQueries();
-		System.out.println("Taille queries" + queries.size());
-		
-		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
-		searching.displayResults(queryResults);
-		System.out.println("-----------");
-		System.out.println("-----------");
-		System.out.println("-----------");
-		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.2);
-		searching.displayFilteredResults(queryFilteredResults);
-		Benchmark bench = new Benchmark(queryFilteredResults);
-		System.out.println("Total results : ");
-		System.out.println(bench.toString());
+//		System.out.println("Taille queries" + queries.size());
+
+		System.out.println("thre ; prcs ; rcll ; speci ; error ; false");
+		for(int i = 0; i < 100; ++i)
+		{
+			Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
+//			searching.displayResults(queryResults);
+//			System.out.println("-----------");
+//			System.out.println("-----------");
+//			System.out.println("-----------");
+			Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)(i/100.));
+//			searching.displayFilteredResults(queryFilteredResults);
+			Benchmark bench = new Benchmark(queryFilteredResults);
+//			System.out.println("Total results : ");
+			System.out.println(String.format("%3.2g",(i/100.)) + " ; " + bench.toString());
+		}
+//		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
+////		searching.displayResults(queryResults);
+////		System.out.println("-----------");
+////		System.out.println("-----------");
+////		System.out.println("-----------");
+//		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.1);
+////		searching.displayFilteredResults(queryFilteredResults);
+//		Benchmark bench = new Benchmark(queryFilteredResults);
+//		System.out.println("Total results : ");
+//		System.out.println(bench.toString());
 	}
 }
