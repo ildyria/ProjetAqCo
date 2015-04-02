@@ -45,12 +45,12 @@ public class SearchFiles {
 		Pattern indexPattern = Pattern.compile(".I" + " (\\d+)");
 		while (currentLine != null) {
 			// Handle indexing and document splitting
-			System.out.println(currentLine);
+			//System.out.println(currentLine);
 			if (currentLine.startsWith(".I")) {
 				Matcher m = indexPattern.matcher(currentLine);
 				m.matches();
 				int index = Integer.parseInt(currentLine.substring(m.start(1), m.end(1)));
-				System.out.println("Index : " + index);
+				//System.out.println("Index : " + index);
 				currentIndex = index;
 
 				while ((currentLine = br.readLine()) != null) {
@@ -68,7 +68,7 @@ public class SearchFiles {
 				currentLine = br.readLine();
 		}
 		queries.put(currentIndex, queryContent);
-		System.out.println(queries.get(currentIndex));
+		//System.out.println(queries.get(currentIndex));
 		br.close();
 		return queries;
 
@@ -87,12 +87,11 @@ public class SearchFiles {
 		Map<Integer, TopDocs> topDocsList = new HashMap<Integer, TopDocs>();
 
 		for (Map.Entry<Integer, String> entry : queries.entrySet()) {
-			System.out.printf("Key : %s and Value: %s %n", entry.getKey(),
-					entry.getValue());
+			//System.out.printf("Key : %s and Value: %s %n", entry.getKey(),entry.getValue());
 
 			Query query = parser.parse(QueryParser.escape((entry.getValue())));
 
-			System.out.println("Searching for: " + query.toString(field));
+			//System.out.println("Searching for: " + query.toString(field));
 
 			TopDocs results = searcher.search(query, 200);
 			topDocsList.put(entry.getKey(), results);

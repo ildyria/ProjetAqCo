@@ -86,7 +86,7 @@ public class IndexFiles {
 				writer.addDocument(doc);
 				i++;
 			}
-			System.out.println("Added " + i + " documents.");
+			System.out.println("Added " + i + " documents in index.");
 		} catch (IOException e) {
 			writer.close();
 			e.printStackTrace();
@@ -113,13 +113,13 @@ public class IndexFiles {
 		Pattern indexPattern = Pattern.compile(".I" + " (\\d+)");
 		while (currentLine != null) {
 			// Handle indexing and document splitting
-			System.out.println(currentLine);
+			//System.out.println(currentLine);
 			if (currentLine.startsWith(".I")) {
 				currentDoc = new Document();
 				Matcher m = indexPattern.matcher(currentLine);
 				m.matches();
 				int index = Integer.parseInt(currentLine.substring(m.start(1), m.end(1)));
-				System.out.println("Index : " + index);
+				//System.out.println("Index : " + index);
 				currentDoc.add(new IntField("index", index, Field.Store.YES));
 				docs.add(currentDoc);
 				
@@ -136,7 +136,7 @@ public class IndexFiles {
 				currentLine = reader.readLine();
 		}
 		currentDoc.add(new TextField("content", docContent, Field.Store.YES));
-		System.out.println(currentDoc.toString());
+		//System.out.println(currentDoc.toString());
 		reader.close();
 		return docs;
 	}

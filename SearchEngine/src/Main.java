@@ -41,7 +41,7 @@ public class Main {
 		
 		SearchFiles searching = new SearchFiles(analyzerImpl);
 		Map<Integer,String> queries = searching.getAllQueries();
-		System.out.println(queries.size());
+		System.out.println("Taille queries" + queries.size());
 		
 		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
 
