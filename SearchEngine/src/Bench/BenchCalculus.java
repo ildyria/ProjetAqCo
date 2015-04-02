@@ -18,26 +18,26 @@ public class BenchCalculus {
 		int tn = 0;
 
 		List<Integer> temp_files = result._files;
-    	System.out.println("" + result._num + " : ");
-    	System.out.print("expected : ");
+//    	System.out.println("" + result._num + " : ");
+//    	System.out.print("expected : ");
     	if(temp_files.size() == 0)
     	{
-    		System.out.println("no results");
+//    		System.out.println("no results");
     	}
     	else
     	{
         	for(int i = 0; i < temp_files.size(); ++i)
         	{
-        		System.out.print(temp_files.get(i) + " ");
+//        		System.out.print(temp_files.get(i) + " ");
         	}
-        	System.out.println();
+//        	System.out.println();
     	}
 
-    	System.out.print("returned : ");
+//    	System.out.print("returned : ");
 		for(int i = 0; i < hits.size(); ++i)
 		{
 			Integer toFind = hits.get(i).doc;
-			System.out.print(hits.get(i).doc + " ");
+//			System.out.print(hits.get(i).doc + " ");
 			if(temp_files.contains(toFind))
 			{
 				temp_files.remove(toFind);
@@ -48,12 +48,12 @@ public class BenchCalculus {
 				fp++;
 			}
 		}
-		System.out.println();
+//		System.out.println();
 		fn = temp_files.size();
 		tn = numFiles - (tp + fp + fn); 
 		
 		res = new BenchData(((Integer)result._num).toString(), tp, fp, fn, tn, temp_files.size());
-		System.out.println(res.toString());
+//		System.out.println(res.toString());
 		return res;
 	}
 	

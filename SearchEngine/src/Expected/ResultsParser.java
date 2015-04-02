@@ -36,26 +36,20 @@ public class ResultsParser {
 				
 				if(previous_request != request_num)
 				{
-					previous_request++;
-//					System.out.println("");
-					while(previous_request != request_num)
-					{
-						System.out.println("request num : " + previous_request);
-						entry = new Result(previous_request);
-						_entries.add(entry);
-						previous_request++;
-					}
-//					System.out.println("request num : " + request_num);
-//					System.out.print("files :");
-//					previous_request = request_num;
 					if(entry != null)
 					{
 						_entries.add(entry);
 					}
+					previous_request++;
+					while(previous_request != request_num)
+					{
+						entry = new Result(previous_request);
+						_entries.add(entry);
+						previous_request++;
+					}
 					entry = new Result(request_num);
 				}
 				entry.push(file_num);
-//				System.out.print(" " + file_num);
 				scanner.close();
 			}
 

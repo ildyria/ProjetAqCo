@@ -49,8 +49,7 @@ public class SearchFiles {
 			if (currentLine.startsWith(".I")) {
 				Matcher m = indexPattern.matcher(currentLine);
 				m.matches();
-				int index = Integer.parseInt(currentLine.substring(m.start(1),
-						m.end(1)));
+				int index = Integer.parseInt(currentLine.substring(m.start(1), m.end(1)));
 				System.out.println("Index : " + index);
 				currentIndex = index;
 
