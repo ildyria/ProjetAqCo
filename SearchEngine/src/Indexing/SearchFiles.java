@@ -25,6 +25,8 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 
+import Bench.BenchCalculus;
+
 public class SearchFiles {
 	private static Analyzer analyzerImpl;
 
@@ -91,7 +93,7 @@ public class SearchFiles {
 
 			Query query = parser.parse(QueryParser.escape((entry.getValue())));
 
-			//System.out.println("Searching for: " + query.toString(field));
+			//System.out.println(entry.getKey() +" Searching for: " + query.toString(field));
 
 			TopDocs results = searcher.search(query, 200);
 			topDocsList.put(entry.getKey(), results);
@@ -118,10 +120,34 @@ public class SearchFiles {
 				}
 			}
 			res.put(pair.getKey(), doclist);
-	        it.remove();
+	        //it.remove();
 	    }
-
-
 		return res;
+	}
+	public void displayResults(Map<Integer, TopDocs> results){
+		Iterator<Entry<Integer, TopDocs>> it = results.entrySet().iterator();
+		while(it.hasNext()){
+			Entry<Integer, TopDocs> query = it.next();
+			System.out.println("Query "+ query.getKey() + " - nombre resultats : "+ query.getValue().scoreDocs.length);
+			ScoreDoc[] hits = query.getValue().scoreDocs;
+			for(int i = 0; i < hits.length; ++i)
+			{
+				System.out.println("i = " + hits[i].doc + " - score = " + hits[i].score);
+			}
+		}
+	}
+	
+	public void displayFilteredResults(Map<Integer,List<ScoreDoc>> results){
+		Iterator<Entry<Integer, List<ScoreDoc>>> it = results.entrySet().iterator();
+	    while (it.hasNext()) {
+	    	Entry<Integer, List<ScoreDoc>> query = it.next();
+	    	System.out.println("Query "+ query.getKey() + " - nombre résultats : "+ query.getValue().size());
+	        List<ScoreDoc> hits = query.getValue();
+	    	for(int i = 0; i < hits.size(); ++i)
+			{
+				System.out.println("i = " + hits.get(i).doc + " - score = " + hits.get(i).score);
+			}
+	        //it.remove();
+	    }
 	}
 }

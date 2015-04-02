@@ -44,9 +44,12 @@ public class Main {
 		System.out.println("Taille queries" + queries.size());
 		
 		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
-
-		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.5);
-		
+		searching.displayResults(queryResults);
+		System.out.println("-----------");
+		System.out.println("-----------");
+		System.out.println("-----------");
+		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.2);
+		searching.displayFilteredResults(queryFilteredResults);
 		Benchmark bench = new Benchmark(queryFilteredResults);
 		System.out.println("Total results : ");
 		System.out.println(bench.toString());

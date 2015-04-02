@@ -25,7 +25,7 @@ public class Benchmark {
 	    while (it.hasNext()) {
 	    	Entry<Integer, List<ScoreDoc>> pair = it.next();
 	    	_datas.add(BenchCalculus.Calculate(pair.getValue(), _expected._entries.get(pair.getKey()-1), 1460));
-	        it.remove();
+	        //it.remove();
 	    }
 		
 	    _bench = BenchCalculus.Moyenne(_datas);
