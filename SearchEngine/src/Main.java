@@ -32,13 +32,19 @@ public class Main {
 //		System.out.println("Plusieurs choix vont s'offrir à vous, choisissez bien !");
 //		Thread.sleep(200);
 		int speed = 50;
+		String prenom;
 		Printer.slow("Bonjour",speed);
 		Printer.slow("Bienvenue dans le Super Moteur de Recherche",speed);
-		Printer.slow("Nous vous attendions !",speed);
+		Printer.slow("Quel est votre prénom ?", speed);
+		Scanner sc = new Scanner(System.in);
+		prenom = sc.nextLine();
+		Printer.slow("Processing",speed);
+		Printer.slow(".......", 1000);
+		Printer.slow("Nous vous attendions " + prenom + " !",speed);
+		Printer.slow("Vous allez vivre une expérience inoubliable, "+ prenom + " !",speed);
 		Printer.slow("Plusieurs choix vont s'offrir à vous, choisissez bien !",speed);
 		
 		String tokenizer = "standard";
-		List<List<String>> filters = new ArrayList<List<String>>();
 			//Analyzer analyzerImpl = new StandardAnalyzer();
 			/*Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
 					   .withTokenizer("standard")
@@ -53,7 +59,7 @@ public class Main {
 			Builder builder = CustomAnalyzer.builder(Paths.get("CISIDonnees"));
 			Printer.slow("Le tokenizer actuel est : " + tokenizer ,speed);
 			Printer.slow("Voulez vous le changer ? (y/n)",speed);
-			Scanner sc = new Scanner(System.in);
+			sc.reset();
 			String val = sc.nextLine();
 			while(!val.equals("y") && !val.equals("n"))
 			{
