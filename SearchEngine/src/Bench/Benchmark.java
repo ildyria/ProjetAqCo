@@ -12,7 +12,7 @@ import org.apache.lucene.search.ScoreDoc;
 import Expected.ResultsParser;
 
 public class Benchmark {
-	HashMap<String, Double> _bench;
+	public HashMap<String, Double> _bench;
 	ArrayList<BenchData> _datas;
 	ResultsParser _expected;
 	
@@ -49,5 +49,13 @@ public class Benchmark {
 				String.format("%.4g", _bench.get("v2_specificity")) + " ; " +
 				String.format("%.3g", _bench.get("v2_error rate")) + " ; " +
 				String.format("%.3g", _bench.get("v2_false"));
-}
+	}
+	
+	public String max_precision(){
+		return String.format("%.3g", _bench.get("max_precision"));
+	}
+
+	public String max_recall(){
+		return String.format("%.3g", _bench.get("max_recall"));
+	}
 }

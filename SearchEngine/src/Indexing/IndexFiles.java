@@ -11,6 +11,8 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import printer.Printer;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -37,8 +39,9 @@ public class IndexFiles {
 		analyzerImpl = _analyzer;
 	}
 
-	/** Index all text files under a directory. */
-	public void run() {
+	/** Index all text files under a directory. 
+	 * @throws Exception */
+	public void run() throws Exception {
 		String indexPath = "index";
 		String docsPath = "CISIDonnees/CISI.ALLnettoye";
 
@@ -46,7 +49,7 @@ public class IndexFiles {
 
 		Date start = new Date();
 		try {
-			System.out.println("Indexing the file '" + indexPath + "'...");
+			Printer.slow("Indexing the file '" + indexPath + "'...", 50);
 
 			Analyzer analyzer = analyzerImpl;
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
@@ -61,7 +64,7 @@ public class IndexFiles {
 
 			writer.close();
 			Date end = new Date();
-			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
+			Printer.slow(end.getTime() - start.getTime() + " total milliseconds",50);
 		} catch (IOException e) {
 			System.out.println(" caught a " + e.getClass() + "\n with message: " + e.getMessage());
 		}
@@ -77,7 +80,7 @@ public class IndexFiles {
 	}
 
 	/** Indexes a single document */
-	private static void indexDoc(IndexWriter writer, File file) throws IOException {
+	private static void indexDoc(IndexWriter writer, File file) throws Exception {
 		try {
 			ArrayList<Document> docs = splitFile(file);
 			int i = 0;
@@ -86,7 +89,7 @@ public class IndexFiles {
 				writer.addDocument(doc);
 				i++;
 			}
-			System.out.println("Added " + i + " documents in index.");
+			Printer.slow("Added " + i + " documents in index.",50);
 		} catch (IOException e) {
 			writer.close();
 			e.printStackTrace();

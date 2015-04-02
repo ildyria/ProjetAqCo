@@ -76,7 +76,6 @@ public class BenchCalculus {
 				nb_precision++;
 			}
 		}
-
 		
 		stats.put("precision", precision / nb_precision);
 		stats.put("specificity", specificity / data.size() );
@@ -89,7 +88,7 @@ public class BenchCalculus {
 		stats.put("v2_recall", (tp/(double)(tp + fn))*100);
 		stats.put("v2_error rate", ((fp + fn)/(double)(fn + tp + fp + tn))*100);
 		stats.put("v2_false", (fn/(double)(tn + fn))*100);
-		
+
 		return stats;
 	}
 }

@@ -83,6 +83,11 @@ public class Main {
 			System.out.println("Aucun filtre n'est paramétré pour le moment");
 			System.out.println("Rajouter un filtre ? (y/n)");
 			val = sc.nextLine();
+			while(!val.equals("y") && !val.equals("n"))
+			{
+				Printer.slow("essayez encore !",speed);
+				val = sc.nextLine();
+			}
 			while(!val.equals("n"))
 			{
 				System.out.println("Voici quelques exemples de filtres, avec leurs noms et paramètres :");
@@ -115,6 +120,7 @@ public class Main {
 				val = sc.nextLine();
 				while(!val.equals("y") && !val.equals("n"))
 				{
+					Printer.slow("essayez encore !",speed);
 					val = sc.nextLine();
 				}
 			}
@@ -131,6 +137,8 @@ public class Main {
 	
 			System.out.println("thre ; prcs ; rcll ; speci ; error ; false");
 			
+			double max_precision = 0;
+			double max_recall = 0;
 			for(int i = 20; i < 30; ++i)
 			{
 				Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
@@ -141,9 +149,21 @@ public class Main {
 				
 				Benchmark bench = new Benchmark(queryFilteredResults);
 				
+				if(bench._bench.get("v2_precision") > max_precision)
+				{
+					max_precision = bench._bench.get("v2_precision");
+				}
+				if(bench._bench.get("v2_recall") > max_recall)
+				{
+					max_recall = bench._bench.get("v2_recall");
+				}
 	//			System.out.println("Total results : ");
 				System.out.println(String.format("%3.2g",(i/100.)) + " ; " + bench.toString());
 			}
-			System.out.println("thre ; prcs ; rcll ; speci ; error ; false");		
+			System.out.println("thre ; prcs ; rcll ; speci ; error ; false");
+			
+			System.out.println();
+			Printer.slow("Bravo " + prenom + ", votre précision maximale est de " + max_precision + "%.", speed);
+			Printer.slow("Votre recall maximal est de " + max_recall + "%.", speed);
 	}
 }
