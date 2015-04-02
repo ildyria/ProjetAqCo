@@ -5,6 +5,7 @@ import java.util.Map;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.custom.CustomAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
@@ -28,11 +29,11 @@ public class Main {
 //				   .build();
 		Analyzer analyzerImpl = CustomAnalyzer.builder(Paths.get("CISIDonnees"))
 				   .withTokenizer("standard")
-//				   .addTokenFilter("standard")
-//				   .addTokenFilter("lowercase")
-//				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
-//				   .addTokenFilter("SnowBallPorter","language", "English")
-//				  // .addTokenFilter("removeduplicates")
+				   .addTokenFilter("standard")
+				   .addTokenFilter("lowercase")
+				   .addTokenFilter("stop", "ignoreCase", "false", "words", "motsvides.txt", "format", "wordset")
+				   .addTokenFilter("SnowBallPorter","language", "English")
+				   .addTokenFilter("removeduplicates")
 				   .build();
 				
 		
@@ -44,7 +45,7 @@ public class Main {
 //		System.out.println("Taille queries" + queries.size());
 
 		System.out.println("thre ; prcs ; rcll ; speci ; error ; false");
-		for(int i = 0; i < 100; ++i)
+		for(int i = 20; i < 30; ++i)
 		{
 			Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
 //			searching.displayResults(queryResults);
@@ -57,15 +58,7 @@ public class Main {
 //			System.out.println("Total results : ");
 			System.out.println(String.format("%3.2g",(i/100.)) + " ; " + bench.toString());
 		}
-//		Map<Integer, TopDocs> queryResults = searching.executeAllQueries(queries);
-////		searching.displayResults(queryResults);
-////		System.out.println("-----------");
-////		System.out.println("-----------");
-////		System.out.println("-----------");
-//		Map<Integer, List<ScoreDoc>> queryFilteredResults = searching.applyThreshold(queryResults, (float)0.1);
-////		searching.displayFilteredResults(queryFilteredResults);
-//		Benchmark bench = new Benchmark(queryFilteredResults);
-//		System.out.println("Total results : ");
-//		System.out.println(bench.toString());
+		System.out.println("thre ; prcs ; rcll ; speci ; error ; false");
+		System.out.println(TokenizerFactory.availableTokenizers());
 	}
 }
