@@ -60,10 +60,45 @@ public class Main {
 				System.out.println("Entrez celui que vous voulez");
 				tokenizer = sc.nextLine();
 			}
-			sc.close();
 			
-			
-			
+			System.out.println("Aucun filtre n'est paramétré pour le moment");
+			System.out.println("Rajouter un filtre ? (y/n)");
+			val = sc.nextLine();
+			while(!val.equals("n"))
+			{
+				System.out.println("Voici quelques exemples de filtres, avec leurs noms et paramètres :");
+				System.out.println("	standard");
+				System.out.println("	lowercase");
+				System.out.println("	stop PARAMS(6) : ignoreCase, false, words, motsvides.txt, format, wordset");
+				System.out.println("	SnowBallPorter PARAMS(2) : language, English");
+				System.out.println("	removeduplicates");
+				System.out.println("---------");
+				System.out.println("Alors, on choisit quoi comme filtre ?");
+				String name = sc.nextLine();
+				System.out.println("Entrez le nombre de paramètres de ce filtre (>=0) :");
+				int nb = sc.nextInt();
+				String[] params = new String[nb];
+				if(nb>0){
+					for (int i=1;i<=nb;i++){
+						System.out.println("Entrez le paramètre " + i);
+						Thread.sleep(1000);
+						String param = sc.nextLine();
+						while(param.equals(""))
+						{
+							param = sc.nextLine();
+						}
+						params[i-1]= param;
+					}
+				}
+				builder.addTokenFilter(name,params);
+				System.out.println("Filtre ajouté !");
+				System.out.println("Encore ? (y/n)");
+				val = sc.nextLine();
+				while(!val.equals("y") && !val.equals("n"))
+				{
+					val = sc.nextLine();
+				}
+			}
 			builder.withTokenizer(tokenizer);
 			Analyzer analyzerImpl = builder.build();
 			
