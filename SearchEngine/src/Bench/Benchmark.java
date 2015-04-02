@@ -37,6 +37,12 @@ public class Benchmark {
 				"recall : " + String.format("%.3g", _bench.get("recall")) + "%, " +
 				"specificity : " + String.format("%.4g", _bench.get("specificity")) + "%, " +
 				"error rate : " + String.format("%.3g", _bench.get("error rate")) + "% " +
-				"false reject : " + String.format("%.3g", _bench.get("false")) + "%.";
+				"false reject : " + String.format("%.3g", _bench.get("false")) + "%." +
+		"\nv2 : \n"
+		+ "precision : " + String.format("%.3g", _bench.get("v2_precision")) +  "%, " +
+		"recall : " + String.format("%.3g", _bench.get("v2_recall")) + "%, " +
+		"specificity : " + String.format("%.4g", _bench.get("v2_specificity")) + "%, " +
+		"error rate : " + String.format("%.3g", _bench.get("v2_error rate")) + "% " +
+		"false reject : " + String.format("%.3g", _bench.get("v2_false")) + "%.";
 	}
 }
