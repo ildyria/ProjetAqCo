@@ -13,6 +13,7 @@ import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
+import printer.Printer;
 import Bench.Benchmark;
 import Indexing.IndexFiles;
 import Indexing.SearchFiles;
@@ -22,14 +23,19 @@ public class Main {
 
 	public static void main(String[] args) throws Exception{
 		
-		System.out.println("Bonjour");
-		Thread.sleep(200);
-		System.out.println("Bienvenue dans le Super Moteur de Recherche");
-		Thread.sleep(200);
-		System.out.println("Nous vous attendions !");
-		Thread.sleep(200);
-		System.out.println("Plusieurs choix vont s'offrir à vous, choisissez bien !");
-		Thread.sleep(200);
+//		System.out.println("Bonjour");
+//		Thread.sleep(200);
+//		System.out.println("Bienvenue dans le Super Moteur de Recherche");
+//		Thread.sleep(200);
+//		System.out.println("Nous vous attendions !");
+//		Thread.sleep(200);
+//		System.out.println("Plusieurs choix vont s'offrir à vous, choisissez bien !");
+//		Thread.sleep(200);
+		int speed = 50;
+		Printer.slow("Bonjour",speed);
+		Printer.slow("Bienvenue dans le Super Moteur de Recherche",speed);
+		Printer.slow("Nous vous attendions !",speed);
+		Printer.slow("Plusieurs choix vont s'offrir à vous, choisissez bien !",speed);
 		
 		String tokenizer = "standard";
 		List<List<String>> filters = new ArrayList<List<String>>();
@@ -45,20 +51,27 @@ public class Main {
 			
 			//new builder
 			Builder builder = CustomAnalyzer.builder(Paths.get("CISIDonnees"));
-			System.out.println("Le tokenizer actuel est : " + tokenizer);
-			System.out.println("Voulez vous le changer ? (y/n)");
+			Printer.slow("Le tokenizer actuel est : " + tokenizer ,speed);
+			Printer.slow("Voulez vous le changer ? (y/n)",speed);
 			Scanner sc = new Scanner(System.in);
 			String val = sc.nextLine();
 			while(!val.equals("y") && !val.equals("n"))
 			{
-				System.out.println("essayez encore !");
+				Printer.slow("essayez encore !",speed);
 				val = sc.nextLine();
 			}
 			if(val.equals("y")){
-				System.out.println("Les tokenizers disponibles sont :");
+				Printer.slow("Les tokenizers disponibles sont :",speed);
 				System.out.println(TokenizerFactory.availableTokenizers());
-				System.out.println("Entrez celui que vous voulez");
+				Printer.slow("Entrez celui que vous voulez",speed);
 				tokenizer = sc.nextLine();
+				while(!TokenizerFactory.availableTokenizers().contains(tokenizer))
+				{
+					Printer.slow("Les tokenizers disponibles sont :",speed);
+					System.out.println(TokenizerFactory.availableTokenizers());
+					Printer.slow("Entrez celui que vous voulez",speed);
+					tokenizer = sc.nextLine();
+				}
 			}
 			
 			System.out.println("Aucun filtre n'est paramétré pour le moment");
